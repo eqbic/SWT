@@ -11,15 +11,21 @@ namespace Contactz
 
         public override void Show()
         {
-            var orderedContacts = contacts.Values.OrderBy(contact => contact.FirstName);   
+               
             Console.Clear();
-            foreach (var contact in orderedContacts)
+            foreach (var contact in OrderContactsByname(contacts))
             {
                 Console.WriteLine($"Firstname: {contact.FirstName}");
                 Console.WriteLine($"Lastname: {contact.LastName}");
                 Console.WriteLine("-------------------------------------");
             }
             Console.WriteLine("Press ESC to get back to main menu!");
+        }
+
+        IEnumerable<Contact> OrderContactsByname(Dictionary<Guid,Contact> contacts)
+        {
+            var orderedContacts = contacts.Values.OrderBy(contact => contact.FirstName);
+            return orderedContacts;
         }
 
         public override MenuBase SwitchMenu(ConsoleKey input)

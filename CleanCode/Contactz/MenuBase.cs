@@ -10,7 +10,6 @@ namespace Contactz
 
         public MenuBase(Dictionary<Guid,Contact> contacts)
         {
-            //this.contacts = contacts.OrderBy(contact => contact.FirstName).ToList<Contact>();
             this.contacts = contacts;
         }
 

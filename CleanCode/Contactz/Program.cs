@@ -7,14 +7,15 @@ namespace Contactz
     {
         static void Main(string[] args)
         {
-            Dictionary<Guid,Contact> contacts = CreateRandomContacts(5);
-            MenuBase menu = new MainMenu(contacts);
+            const int numberOfRandomContacts = 5;
+            Dictionary<Guid,Contact> contacts = CreateRandomContacts(numberOfRandomContacts);
+            MenuBase currentMenu = new MainMenu(contacts);
 
             while (true)
             {
-                menu.Show();
+                currentMenu.Show();
                 var input = GetInput();
-                menu = menu.SwitchMenu(input);
+                currentMenu = currentMenu.SwitchMenu(input);
             }
         }
 
