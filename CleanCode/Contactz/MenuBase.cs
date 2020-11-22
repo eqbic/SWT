@@ -6,11 +6,12 @@ namespace Contactz
 {
     public abstract class MenuBase
     {
-        protected List<Contact> contacts;
+        protected Dictionary<Guid,Contact> contacts;
 
-        public MenuBase(List<Contact> contacts)
+        public MenuBase(Dictionary<Guid,Contact> contacts)
         {
-            this.contacts = contacts.OrderBy(contact => contact.FirstName).ToList<Contact>();
+            //this.contacts = contacts.OrderBy(contact => contact.FirstName).ToList<Contact>();
+            this.contacts = contacts;
         }
 
         public abstract void Show();

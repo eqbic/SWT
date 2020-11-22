@@ -5,7 +5,7 @@ namespace Contactz
 {
     public class MainMenu : MenuBase
     {
-        public MainMenu(List<Contact> contacts) : base(contacts)
+        public MainMenu(Dictionary<Guid,Contact> contacts) : base(contacts)
         {
         }
 

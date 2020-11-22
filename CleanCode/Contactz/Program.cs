@@ -7,7 +7,7 @@ namespace Contactz
     {
         static void Main(string[] args)
         {
-            List<Contact> contacts = CreateRandomContacts(5);
+            Dictionary<Guid,Contact> contacts = CreateRandomContacts(5);
             MenuBase menu = new MainMenu(contacts);
 
             while (true)
@@ -23,9 +23,9 @@ namespace Contactz
             return Console.ReadKey().Key;
         }
 
-        static List<Contact> CreateRandomContacts(int numberOfContacts)
+        static Dictionary<Guid,Contact> CreateRandomContacts(int numberOfContacts)
         {
-            var contacts = new List<Contact>();
+            var contacts = new Dictionary<Guid,Contact>();
 
             Random random = new Random();
 
@@ -37,7 +37,7 @@ namespace Contactz
                 var firstNameIndex = random.Next(firstNames.Length);
                 var lastNameIndex = random.Next(lastNames.Length);
                 var contact = new Contact(firstNames[firstNameIndex], lastNames[lastNameIndex]);
-                contacts.Add(contact);
+                contacts.Add(contact.Id, contact);
             }
 
             return contacts;

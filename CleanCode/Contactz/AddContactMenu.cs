@@ -5,7 +5,7 @@ namespace Contactz
 {
     public class AddContactMenu : MenuBase
     {
-        public AddContactMenu(List<Contact> contacts) : base(contacts)
+        public AddContactMenu(Dictionary<Guid,Contact> contacts) : base(contacts)
         {
         }
 
@@ -27,7 +27,7 @@ namespace Contactz
             {
                 case ConsoleKey.Y:
                     var newContact = new Contact(firstName, lastName);
-                    contacts.Add(newContact);
+                    contacts.Add(newContact.Id, newContact);
                     return new ContactsMenu(contacts);
                 case ConsoleKey.N:
                     return new ContactsMenu(contacts);
