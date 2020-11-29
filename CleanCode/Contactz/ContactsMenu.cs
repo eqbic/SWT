@@ -17,6 +17,7 @@ namespace Contactz
             {
                 Console.WriteLine($"Firstname: {contact.FirstName}");
                 Console.WriteLine($"Lastname: {contact.LastName}");
+                Console.WriteLine($"Email: { contact.Email}");
                 Console.WriteLine("-------------------------------------");
             }
             Console.WriteLine("Press ESC to get back to main menu!");

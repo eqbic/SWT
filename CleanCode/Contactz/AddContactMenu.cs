@@ -11,6 +11,7 @@ namespace Contactz
 
         private string firstName;
         private string lastName;
+        private string email;
         public override void Show()
         {
             Console.Clear();
@@ -18,6 +19,8 @@ namespace Contactz
             firstName = Console.ReadLine();
             Console.WriteLine("Lastname:");
             lastName = Console.ReadLine();
+            Console.WriteLine("Email:");
+            email = Console.ReadLine();
             Console.WriteLine("Save contact? (y/n)");
         }
 
@@ -26,7 +29,7 @@ namespace Contactz
             switch (input)
             {
                 case ConsoleKey.Y:
-                    var newContact = new Contact(firstName, lastName);
+                    var newContact = new Contact(firstName, lastName, email);
                     contacts.Add(newContact.Id, newContact);
                     return new ContactsMenu(contacts);
                 case ConsoleKey.N:

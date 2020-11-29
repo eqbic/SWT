@@ -37,7 +37,10 @@ namespace Contactz
             {
                 var firstNameIndex = random.Next(firstNames.Length);
                 var lastNameIndex = random.Next(lastNames.Length);
-                var contact = new Contact(firstNames[firstNameIndex], lastNames[lastNameIndex]);
+                var firstName = firstNames[firstNameIndex];
+                var lastName = lastNames[lastNameIndex];
+                var email = $"{firstName}{lastName}@mail.com";
+                var contact = new Contact(firstName, lastName, email);
                 contacts.Add(contact.Id, contact);
             }
 
