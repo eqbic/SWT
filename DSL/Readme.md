@@ -2,7 +2,7 @@
 
 ## Beschreibung
 
-Diese kleine DSL erleichtert das Erstellen von Car-Objekten. Es können folgende Eigenschaften gesetzt werden:
+Diese kleine DSL erleichtert die Konfiguration von Car-Objekten. Es können folgende Eigenschaften gesetzt werden:
 - Baujahr
 - Farbe
 - Marke
