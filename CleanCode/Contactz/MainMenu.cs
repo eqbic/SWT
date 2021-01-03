@@ -5,7 +5,7 @@ namespace Contactz
 {
     public class MainMenu : MenuBase
     {
-        public MainMenu(Dictionary<Guid,Contact> contacts) : base(contacts)
+        public MainMenu(Dictionary<Guid, Contact> contacts) : base(contacts)
         {
         }
 
@@ -20,6 +20,7 @@ namespace Contactz
             Console.WriteLine("Choose an option!");
         }
 
+       
         public override MenuBase SwitchMenu(ConsoleKey input)
         {
             switch (input)
